@@ -4,10 +4,7 @@
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Web site created using create-snowpack-app"
-    />
+    <meta name="description" content="Weather time consulting" />
     <!--
       Snowpack will replace / with the value you have for `baseUrl` in `snowpack.config.js`.
       Make sure to update it with your GitHub Page URL. https://<your-username>.github.io/<your-repo-name>
@@ -20,64 +17,52 @@
       type="text/css"
       href="/_dist_/index.css"
     />
-    <title>Snowpack & Tailwind App</title>
+    <title>Weathering</title>
   </head>
-  <body>
-    <!--
-      This HTML file is a template.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-
-      Start modyfing from here.
-    -->
-    <div class="py-10 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <p
-          class="text-base leading-6 text-indigo-600 font-semibold tracking-wide uppercase"
-        >
-          Snowpack
-        </p>
+  <body class="bg-gray-100 antialiased">
+    <div class="py-10 max-w-screen-xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="flex flex-col justify-center items-center mb-10 w-full">
         <h3
-          class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10"
+          class="text-base text-4xl leading-8 font-extrabold tracking-tight mb-8 text-gray-900 sm:text-6xl w-5/6"
         >
-          Tailwind template
+          Weathering 🌥
         </h3>
-        <p class="mt-4 max-w-2xl text-xl leading-7 text-gray-500 mx-auto">
-          Use this template to build awesome websites using Snowpack and
-          Tailwind. It also includes Prettier and automatic publish to GitHub
-          pages using GitHub Actions. Learn more:
-        </p>
-        <ul
-          class="text-xl leading-7 sm:flex justify-around sm:max-w-2xl sm:mx-auto mt-10"
+        <p
+          class="text-base max-w-2xl sm:text-xl leading-7 text-gray-900 mx-8 w-5/6 leading-tight tracking-tight"
         >
-          <li class="my-4 p-4 px-6 bg-gray-300 hover:bg-gray-500">
-            <a href="https://snowpack.dev" target="_blank">snowpack.dev</a>
-          </li>
-          <li class="my-4 p-4 px-6 bg-gray-300 hover:bg-gray-500">
-            <a href="https://tailwindcss.com" target="_blank"
-              >tailwindcss.com</a
-            >
-          </li>
-          <li class="my-4 p-4 px-6 bg-gray-300 hover:bg-gray-500">
-            <a
-              href="https://docs.github.com/en/free-pro-team@latest/actions"
-              target="_blank"
-              >GitHub Actions</a
-            >
-          </li>
-        </ul>
-        <p class="mt-14 text-xl leading-7 text-gray-500">Start using it:</p>
-        <div class="my-5 bg-gray-800 p-5 text-white">
-          <code>
-            npx create-snowpack-app my-app --template snowpack-template-tailwind
-          </code>
-        </div>
-        <p class="mt-16 text-xl leading-7 text-gray-500 underline">
-          <a href="https://github.com/jonalvarezz/snowpack-template-tailwind"
-            >See on GitHub</a
-          >
+          Type the name of a city, its country code and get the instant weather
         </p>
+      </div>
+      <div id="main" class="flex flex-col justify-center items-center w-full">
+        <div
+          id="search_container"
+          class="flex flex-col justify-start items-start w-5/6"
+        >
+          <p class="text-gray-900 pl-2 pb-4">City's name 🏙</p>
+          <input
+            id="input_city"
+            class="p-4 rounded-lg bg-gray-200 text-black w-full ring-2 focus:ring-2 focus:outline-none ring-blue-400"
+            type="text"
+            placeholder="San Francisco"
+          />
+          <p class="text-gray-900 pl-2 pb-4 mt-12">Country code 🆔</p>
+          <input
+            id="input_city_code"
+            class="p-4 rounded-lg bg-gray-200 text-black w-full ring-2 focus:ring-2 focus:outline-none ring-blue-400"
+            type="text"
+            placeholder="Example ( US )"
+          />
+          <button
+            id="search"
+            class="flex justify-center items-center bg-blue-500 mt-16 rounded-lg text-gray-200 w-full text-3xl h-16 ring-2 focus:ring-2 focus:outline-none"
+          >
+            Search
+          </button>
+        </div>
+        <div
+          id="weather_article_mount"
+          class="flex flex-col justify-center items-center w-full"
+        ></div>
       </div>
     </div>
 
